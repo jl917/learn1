@@ -1,0 +1,20 @@
+{
+  "name": "learn_mock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mockjs": "^1.0.1-beta3"
+  },
+  "dependencies": {
+    "fake": "^0.2.2",
+    "faker": "^4.1.0",
+    "restify": "^7.6.0"
+  }
+}

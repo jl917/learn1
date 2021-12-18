@@ -1,0 +1,15 @@
+<script>
+
+let delay = time => new Promise((resolve,rejact) => {
+    setTimeout( () => {
+        resolve('test')
+    },time)
+})
+
+
+
+delay(2999).then(() => {
+	console.log('test');
+});
+
+</script>

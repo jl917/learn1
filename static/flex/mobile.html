@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+html,body{margin:0;padding:0;height:100%;}
+h1,ul,li{padding:0;margin:0;list-style: none;}
+#wrap{display: flex;flex-direction: column;height:100%;width:100%}
+header{display:flex;height:50px; background:coral;}
+
+section{flex:1; overflow: scroll}
+
+footer ul{display:flex;flex-direction: row}
+
+
+footer ul li{width:20%; background: darkgray; line-height:50px;height:50px;text-align: center}
+
+header h1{order:2;flex:1; text-align: center;}
+header nav{order:1;width:50px;}
+header .mypage{order:3;width:50px;}
+</style>
+</head>
+<body>
+
+<div id="wrap">
+    <header>
+        <h1>Logo</h1>
+        <nav>
+            <button>三</button>
+        </nav>
+        <button class="mypage">人</button>
+    </header>
+    <section class="content">
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p><p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p><p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p><p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+    </section>
+    <footer>
+        <ul>
+            <li>nav 1</li>
+            <li>nav 2</li>
+            <li>nav 3</li>
+            <li>nav 4</li>
+            <li>nav 5</li>
+        </ul>
+    </footer>
+</div>
+</body>
+</html>

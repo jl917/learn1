@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+</head>
+<!-- nodata 第三栏接口无数据时样式不变 -->
+<body>
+
+<div id="box">
+
+</div>
+
+<script>
+var source = new EventSource('http://www.runoob.com/try/demo_source/demo_sse.php');
+console.log(source)
+source.onmessage = e => {
+    console.log(e)
+    document.getElementById("box").innerHTML+=event.data + "<br>";
+};
+</script>
+</body>
+</html>

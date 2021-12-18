@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>service worker</title>
+    <link href="/sub.css" rel="stylesheet">
+    <script src="/sub.js"></script>
+</head>
+
+<body>
+        <a href="/">goto main</a>
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+    
+        navigator.serviceWorker.register('/sw.js', {scope: '/'})
+        .then(function (registration) {
+
+            // 注册成功
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(function (err) {
+
+            // 注册失败:(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+</head>
+<!-- nodata 第三栏接口无数据时样式不变 -->
+<body>
+
+<div id="box">
+
+</div>
+
+<iframe src="http://localhost:8081/index2.html" ></iframe>
+<script>
+window.frames[0].postMessage('getcolor','http://localhost:8081');
+</script>
+</body>
+</html>

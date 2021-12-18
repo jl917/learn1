@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+</head>
+<!-- nodata 第三栏接口无数据时样式不变 -->
+<body>
+
+<div id="box"></div>
+<input id="first" />
+
+
+
+<script>
+let w = new Worker("./work.js");
+
+let first = document.getElementById('first')
+let box = document.getElementById('box')
+
+first.onchange = function() {
+    console.log(first.value)
+    w.postMessage(first.value); // Sending message as an array to the worker
+    //console.log('Main (first.onchange): Message posted to worker');
+}
+
+w.onmessage = function(e) {
+    box.innerHTML = e.data
+}
+</script>
+</body>
+</html>

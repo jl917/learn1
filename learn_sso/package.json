@@ -1,0 +1,27 @@
+{
+  "name": "learn_sso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "s": "node authServer/server",
+    "a": "node sitea/app",
+    "b": "node siteb/app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "crypto": "^1.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "hashids": "^1.2.2",
+    "jsonwebtoken": "^8.4.0",
+    "url": "^0.11.0",
+    "uuid": "^3.3.2"
+  }
+}
