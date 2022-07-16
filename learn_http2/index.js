@@ -1,23 +1,19 @@
 const http2 = require('http2');
 const fs = require('fs');
-const client = http2.connect('https://localhost:8443', {
-  ca: fs.readFileSync('localhost-cert.pem')
-});
-client.on('error', (err) => console.error(err));
 
-const req = client.request({ ':path': '/' });
+const server = http2.createSecureServer({
+  key: fs.readFileSync('localguryongcc.key'),
+  cert: fs.readFileSync('localguryongcc.crt')
+});
+server.on('error', (err) => console.error(err));
 
-req.on('response', (headers, flags) => {
-  for (const name in headers) {
-    console.log(`${name}: ${headers[name]}`);
-  }
+server.on('stream', (stream, headers) => {
+  // stream is a Duplex
+  stream.respond({
+    'content-type': 'text/html; charset=utf-8',
+    ':status': 200
+  });
+  stream.end('<h1>Hello World</h1>');
 });
 
-req.setEncoding('utf8');
-let data = '';
-req.on('data', (chunk) => { data += chunk; });
-req.on('end', () => {
-  console.log(`\n${data}`);
-  //client.close();
-});
-req.end();
+server.listen(8443);
